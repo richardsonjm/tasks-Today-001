@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.eventsList.text = [self setTextForEvents:self.events];
     // Do any additional setup after loading the view.
 }
 
@@ -33,5 +34,14 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (NSString *)setTextForEvents:(NSArray *)events {
+    NSString *eventsList = @"";
+    for(EKEvent *event in events) {
+        eventsList = [eventsList stringByAppendingFormat:@"%@\n", event.title];
+    }
+    return eventsList;
+}
+
 
 @end

@@ -78,6 +78,9 @@
                         </accessibility>
                     </view>
                     <navigationItem key="navigationItem" id="jML-hK-JxE"/>
+                    <connections>
+                        <outlet property="eventsList" destination="MJ7-Oe-1dd" id="Jrm-W4-t2T"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GNZ-sn-vCe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

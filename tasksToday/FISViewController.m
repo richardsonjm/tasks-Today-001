@@ -8,6 +8,7 @@
 
 #import "FISViewController.h"
 #import <EventKit/EventKit.h>
+#import "FISEventDetailViewController.h"
 
 @interface FISViewController ()
 
@@ -83,5 +84,13 @@
     }];
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    FISEventDetailViewController *EDVC = [segue destinationViewController];
+    if ([segue.identifier isEqualToString:@"lastYear"]) {
+        EDVC.events = self.getLastYearsEvents;
+    } else if ([segue.identifier isEqualToString:@"nextYear"]) {
+        EDVC.events = self.getNextYearsEvents;
+    }
+}
 
 @end
