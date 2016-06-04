@@ -37,8 +37,13 @@
 
 - (NSString *)setTextForEvents:(NSArray *)events {
     NSString *eventsList = @"";
+    NSUInteger numberOfEvents = [events count];
     for(EKEvent *event in events) {
-        eventsList = [eventsList stringByAppendingFormat:@"%@\n", event.title];
+        if ([events indexOfObject:event] == numberOfEvents - 1) {
+             eventsList = [eventsList stringByAppendingFormat:@"%@", event.title];
+        } else {
+            eventsList = [eventsList stringByAppendingFormat:@"%@\n", event.title];
+        }
     }
     return eventsList;
 }
